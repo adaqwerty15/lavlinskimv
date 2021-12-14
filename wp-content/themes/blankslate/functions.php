@@ -1,5 +1,9 @@
 <?php
 add_action( 'after_setup_theme', 'blankslate_setup' );
+if ( ! defined( '_S_VERSION' ) ) {
+	// Replace the version number of the theme on each release.
+	define( '_S_VERSION', '1.0.13' );
+}
 function blankslate_setup() {
 load_theme_textdomain( 'blankslate', get_template_directory() . '/languages' );
 add_theme_support( 'title-tag' );
@@ -25,7 +29,8 @@ add_user_meta( $user_id, 'blankslate_notice_dismissed_3', 'true', true );
 }
 add_action( 'wp_enqueue_scripts', 'blankslate_enqueue' );
 function blankslate_enqueue() {
-wp_enqueue_style( 'blankslate-style', get_stylesheet_uri() );
+$style_ver = filemtime( get_stylesheet_directory() . '/style.css' );	
+wp_enqueue_style( 'blankslate-style', get_stylesheet_uri(), '',  $style_ver);
 wp_enqueue_script( 'jquery' );
 }
 add_action( 'wp_footer', 'blankslate_footer' );

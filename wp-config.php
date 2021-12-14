@@ -1,4 +1,5 @@
 <?php
+define('WP_CACHE', true); // WP-Optimize Cache
 /**
  * Основные параметры WordPress.
  *
@@ -17,26 +18,19 @@
  *
  * @package WordPress
  */
-
 // ** Параметры MySQL: Эту информацию можно получить у вашего хостинг-провайдера ** //
 /** Имя базы данных для WordPress */
 define( 'DB_NAME', 'lavlin_mv' );
-
 /** Имя пользователя MySQL */
 define( 'DB_USER', 'lavlin_mv' );
-
 /** Пароль к базе данных MySQL */
 define( 'DB_PASSWORD', 'zyfc4943nrhry%' );
-
 /** Имя сервера MySQL */
 define( 'DB_HOST', 'localhost' );
-
 /** Кодировка базы данных для создания таблиц. */
 define( 'DB_CHARSET', 'utf8mb4' );
-
 /** Схема сопоставления. Не меняйте, если не уверены. */
 define( 'DB_COLLATE', '' );
-
 /**#@+
  * Уникальные ключи и соли для аутентификации.
  *
@@ -56,9 +50,7 @@ define('AUTH_SALT',        '2<P,)z.Alf?gq>^L>v^h=M-C,3G^mH!!M4e##:]D+~x,#R+[lHc$
 define('SECURE_AUTH_SALT', '$grf+-n T-Bm4C>o!2J-kZ0~iKky$vYoR-[(YxLf?9YW|54pK%iH_K?rRb-]0s-~');
 define('LOGGED_IN_SALT',   '$ YBx[l?4ABs!]%C*@:)).gO_BoyL3OLD=+f:q(XQ+F%eH+IH2hRWQr:(Z(W{[sl');
 define('NONCE_SALT',       '<68Frp/ZHeS>:ZEW2H3iU NsKVZqt40f!w|!bGqwr!QeY}x/-&7-7#Z*dGAUD$tu');
-
 /**#@-*/
-
 /**
  * Префикс таблиц в базе данных WordPress.
  *
@@ -66,7 +58,6 @@ define('NONCE_SALT',       '<68Frp/ZHeS>:ZEW2H3iU NsKVZqt40f!w|!bGqwr!QeY}x/-&7-
  * разные префиксы. Пожалуйста, указывайте только цифры, буквы и знак подчеркивания.
  */
 $table_prefix = 'wp_';
-
 /**
  * Для разработчиков: Режим отладки WordPress.
  *
@@ -79,19 +70,12 @@ $table_prefix = 'wp_';
  * @link https://ru.wordpress.org/support/article/debugging-in-wordpress/
  */
 define( 'WP_DEBUG', false );
-
 /* Произвольные значения добавляйте между этой строкой и надписью "дальше не редактируем". */
-
-
-
 /* Это всё, дальше не редактируем. Успехов! */
-
 /** Абсолютный путь к директории WordPress. */
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', __DIR__ . '/' );
 }
-
 /** Инициализирует переменные WordPress и подключает файлы. */
 require_once ABSPATH . 'wp-settings.php';
-
 define('FS_METHOD', 'direct');
